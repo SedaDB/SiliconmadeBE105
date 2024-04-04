@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2. Hafta ödevi">
+    <meta name="author" content="Seda DİRİL BOYRAZ">
+    <title>2. Hafta Ödevi</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="ustbaslik">
+        <strong>CV HAZIRLAMA ARACI</strong>
+    </div>
+    <div class="icerik">
+        <div class="ayar">
+            <div class="giris">
+                <div class="metinIcerik">
+                    <h2><strong>Metin İçerikleri</strong></h2>
+                    <hr>
+                </div>
+                <table>
+                    <tr>
+                        <th colspan="2"><u>İsim Kutusu</u></th>
+                    </tr>
+                    <tr>
+                        <td><label for="adGir">Ad Soyad:</label></td>
+                        <td><input type="text" name="adGir" id="adGir" onkeyup='isimKutusu()'></td>
+                    </tr>
+                    <tr>
+                        <td><label for="unGir">Ünvan:</label></td>
+                        <td><input type="text" name="unGir" id="unGir" onkeyup='unvanKutusu()'></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><u>İletişim Bilgileri</u></th>
+                    </tr>
+                    <tr>
+                        <td><label for="telGir">Telefon:</label></td>
+                        <td><input type="tel" name="telGir" id="telGir" onkeyup='telKutusu()'></td>
+                    </tr>
+                    <tr>
+                        <td><label for="mailGir">Mail:</label></td>
+                        <td><input type="email" name="mailGir" id="mailGir" onkeyup='mailKutusu()'></td>
+                    </tr>
+                    <tr>
+                        <td><label for="webGir">Web:</label></td>
+                        <td><input type="url" name="webGir" id="webGir" onkeyup='webKutusu()'></td>
+                    </tr>
+                    <tr>
+                        <td><label for="adresGir">Adres:</label></td>
+                        <td colspan="2">
+                            <textarea type="text" name="adresGir" id="adresGir" onkeyup='adresKutusu()'>
+                            </textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><u>Eğitim Bilgileri</u></th>
+                    </tr>
+                    <tr>
+                        <td><label for="acik1">Açıklama:</label></td>
+                        <td colspan="2"><textarea type="text" name="acik1" id="acik1" onkeyup='egitimAciklama()'></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="okulSayi">Okul Sayısı:</label></td>
+                        <td>
+                            <select name="okulSayi" id="okulSayi" onchange="okulSayiSecim()">
+                                <option value="0" selected disabled>Seçiniz</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <div class="acKapa" >
+                        <tr class="o1">
+                            <td><label for="o1">1. Okul</label></td>
+                            <td>
+                                <input type="text" name="o1" id="o1" onkeyup="girisOkul('o1', 'li1', 'oa1')">
+                            </td>
+                            <td>
+                                <input type="text" id="oa1" placeholder="Açıklama" onkeyup="girisAciklama('o1', 'li1', 'oa1')">
+                            </td>
+                        </tr>
+                        <tr class="o2">
+                            <td><label for="o2">2. Okul</label></td>
+                            <td>
+                                <input type="text" name="o2" id="o2" onkeyup="girisOkul('o2', 'li2', 'oa2')">
+                            </td>
+                            <td>
+                                <input type="text" id="oa2" placeholder="Açıklama" onkeyup="girisAciklama('o2', 'li2', 'oa2')">
+                            </td>
+                        </tr>
+                        <tr class="o3">
+                            <td><label for="o3">3. Okul</label></td>
+                            <td>
+                                <input type="text" name="o3" id="o3" onkeyup="girisOkul('o3', 'li3', 'oa3')">
+                            </td>
+                            <td>
+                                <input type="text" id="oa3" placeholder="Açıklama" onkeyup="girisAciklama('o3', 'li3', 'oa3')">
+                            </td>
+                        </tr>
+                        <tr class="o4">
+                            <td><label for="o4">4. Okul</label></td>
+                            <td>
+                                <input type="text" name="o4" id="o4" onkeyup="girisOkul('o4', 'li4', 'oa4')">
+                            </td>
+                            <td>
+                                <input type="text" id="oa4" placeholder="Açıklama" onkeyup="girisAciklama('o4', 'li4', 'oa4')">
+                            </td>
+                        </tr>
+                    </div>
+                    <tr>
+                        <th colspan="2"><u>Yetenekler</u></th>
+                    </tr>
+                    <tr>
+                        <td><label for="acik2">Açıklama:</label></td>
+                        <td colspan="2"><textarea type="text" name="acik2" id="acik2" onkeydown="giris('acik2', 'talent')"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="yetSayi">Yetenek Sayısı:</label></td>
+                        <td>
+                            <select name="yetSayi" id="yetSayi" onchange="yetSayiSecim()">
+                                <option value="0" selected disabled>Seçiniz</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <div class="acKapa">
+                        <tr class="y1">
+                            <td><label for="y1">1. Yetenek </label></td>
+                            <td>
+                                <input type="text" name="y1" id="y1" onkeydown="girisOkul('y1', 'tli1', 'ta1')">
+                            </td>
+                            <td>
+                                <input type="text" id="ta1" placeholder="Açıklama" onkeydown="girisAciklama('y1', 'tli1', 'ta1')">
+                            </td>
+                        </tr>
+                        <tr class="y2">
+                            <td><label for="y2">2. Yetenek</label></td>
+                            <td>
+                                <input type="text" name="y2" id="y2" onkeydown="girisOkul('y2', 'tli2', 'ta2')">
+                            </td>
+                            <td>
+                                <input type="text" id="ta2" placeholder="Açıklama" onkeydown="girisAciklama('y2', 'tli2', 'ta2')">
+                            </td>
+                        </tr>
+                        <tr class="y3">
+                            <td><label for="y3">3. Yetenek</label></td>
+                            <td>
+                                <input type="text" name="y3" id="y3" onkeydown="girisOkul('y3', 'tli3', 'ta3')">
+                            </td>
+                            <td>
+                                <input type="text" id="ta3" placeholder="Açıklama" onkeydown="girisAciklama('y3', 'tli3', 'ta3')">
+                            </td>
+                        </tr>
+                        <tr class="y4">
+                            <td><label for="y4">4. Yetenek</label></td>
+                            <td>
+                                <input type="text" name="y4" id="y4" onkeydown="girisOkul('y4', 'tli4', 'ta4')">
+                            </td>
+                            <td>
+                                <input type="text" id="ta4" placeholder="Açıklama" onkeydown="girisAciklama('y4', 'tli4', 'ta4')">
+                            </td>
+                        </tr>
+                    </div>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><u>Hakkımda</u></th>
+                    </tr>
+                    <tr>
+                        <td><label for="acik3">Açıklama:</label></td>
+                        <td colspan="2"><textarea type="text" name="acik3" id="acik3" onkeydown="giris('acik3', 'about')"></textarea></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><u>İş Deneyimi</u></th>
+                    </tr>
+                    <tr>
+                        <td><label for="acik4">Açıklama:</label></td>
+                        <td colspan="2"><textarea type="text" name="acik4" id="acik4" onkeydown="giris('acik4', 'exp')"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="gorunus">
+                <div class="metinIcerik">
+                    <h2><strong>Görünüş</strong></h2>
+                    <hr>
+                </div>
+                <table>
+                    <tr>
+                        <th colspan="2"><u>Renkler</u></th>
+                    </tr>
+                    <tr>
+                        <td><label for="bgColor">Arkaplan Rengi: </label></td>
+                        <td><input type="color" name="bgColor" id="bgColor" value="#e71414" onchange="changeColor('bgColor','cv');changeColor('bgColor','sag')"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="lcColor">Sol Kolon Rengi: </label></td>
+                        <td><input type="color" name="lcColor" id="lcColor" value="#ff0000" onchange="changeColor('lcColor','sol')"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nbColor">İsim Kutusu Rengi: </label></td>
+                        <td><input type="color" name="nbColor" id="nbColor" value="#2f4f4f" onchange="changeColor('nbColor','baslik')"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nbwColor">İsim Kutusu Yazı Rengi: </label></td>
+                        <td><input type="color" name="nbwColor" id="nbwColor" value="#ffffff" onchange="changeBaslikTextColor(this.value)"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><u>Yazı Tipi</u></th>
+                    </tr>
+                    <tr>
+                        <td><label for="YaziTipi">Yazı Tipi:</label></td>
+                        <td>
+                            <select name="YaziTipi" id="YaziTipi" onchange="changeFontFamily()">
+                                <option value="0" selected disabled>Seçiminiz</option>
+                                <option value="1">Times New Roman</option>
+                                <option value="2">Courier New</option>
+                                <option value="3">Lucida Handwriting</option>
+                            </select>
+                        </td>
+                    <tr>
+                        <th colspan="2"><u>Fotoğraf</u></th>
+                    </tr>
+                    <tr>
+                        <td><label for="Cevre">Fotopraf Çerçevesi Şekli:</label></td>
+                        <td>
+                            <select name="Cevre" id="Cevre" onchange="changeCevre()">
+                                <option value="0" selected disabled>Seçiminiz</option>
+                                <option value="1">Köşeli</option>
+                                <option value="2">Oval</option>
+                                <option value="3">Yuvarlak</option>
+                            </select>
+                        </td>
+                    <tr>
+                        <th colspan="2"><u>Başlık Altı Çizgileri</u></th>
+                    </tr>
+                    <tr>
+                        <td><label for="lineColor">Çizgi Rengi: </label></td>
+                        <td><input type="color" name="lineColor" id="lineColor" value="#000000" onchange="changeHrColor()"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="lineType">Çizgi Şekli:</label></td>
+                        <td>
+                            <select name="lineType" id="lineType" onchange="changeHrStyle()">
+                                <option value="0" selected disabled>Seçiminiz</option>
+                                <option value="1">Noktalı</option>
+                                <option value="2">Çizgili</option>
+                                <option value="3">Düz</option>
+                            </select>
+                        </td>
+                </table>
+            </div>
+        </div>
+        <div class="cv">
+            <div class="sol">
+                <div class="foto">
+                    <p>FOTOĞRAF</p>
+                </div>
+                <div class="iletisim">
+                    <h3 class="head">İLETİŞİM</h3>
+                    <hr class="headHr">
+                    <ul>
+                        <li id="tel"></li>
+                        <li id="mail"></li>
+                        <li id="adres"></li>
+                        <li id="web"></li>
+                    </ul>
+                </div>
+                <div class="edu">
+                    <h3 class="head">EĞİTİM</h3>
+                    <hr class="headHr">
+                    <p id="edu"></p>
+                    <ul id="eduUl">
+                        <li id="li1">
+                        
+                        </li>
+                        <li id="li2">
+                        
+                        </li>
+                        <li id="li3">
+                        
+                        </li>
+                        <li id="li4">
+                        
+                        </li>
+                    </ul>
+                </div>
+                <div class="talent">
+                    <h3 class="head">YETENEKLER</h3>
+                    <hr class="headHr">
+                    <p id="talent"></p>
+                    <ul id="talUl">
+                        <li id="tli1">
+                        
+                        </li>
+                        <li id="tli2">
+                        
+                        </li>
+                        <li id="tli3">
+                        
+                        </li>
+                        <li id="tli4">
+                        
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sag">
+                <div class="baslik">
+                    <h1 id="ad">{ AD SOYAD }</h1>
+                    <hr>
+                    <h2 id="un">{ UNVAN }</h2>
+                </div>
+                <div class="about">
+                    <h3 class="head">HAKKIMDA</h3>
+                    <hr class="headHr">
+                    <p id="about"></p>
+                </div>
+                <div class="exp">
+                    <h3 class="head">İŞ DENEYİMİ</h3>
+                    <hr class="headHr">
+                    <p id="exp"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
