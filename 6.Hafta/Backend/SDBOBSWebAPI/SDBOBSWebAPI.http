@@ -1,0 +1,6 @@
+@SDBOBSWebAPI_HostAddress = http://localhost:5232
+
+GET {{SDBOBSWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "6be4e5a8-62c9-4c4c-9aa9-0bdbb3e1f326",
+		"name": "SDBBlogAPICorePostman",
+		"description": "5\\. Hafta Ödevi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34577461"
+	},
+	"item": [
+		{
+			"name": "AllArticles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7262/api/Article",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7262",
+					"path": [
+						"api",
+						"Article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateArticle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"string\",\r\n  \"content\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7262/api/Article",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7262",
+					"path": [
+						"api",
+						"Article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateArticleBadRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"content\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7262/api/Article",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7262",
+					"path": [
+						"api",
+						"Article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArticlebyId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7262/api/Article/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7262",
+					"path": [
+						"api",
+						"Article",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2",
+							"uuid": "233d462c-1925-48c2-b241-49cefa1a58e1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArticlebyIdNotFound",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7262/api/Article/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7262",
+					"path": [
+						"api",
+						"Article",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"uuid": "132e5056-ed5f-4c9b-b6eb-1341067df3c2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateArticle",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Yeni Başlık\",\r\n  \"content\": \"Yeni İçerik\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7262/api/Article/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7262",
+					"path": [
+						"api",
+						"Article",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"uuid": "231679c2-10e4-45ca-93b6-222aee2c88db"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateArticleBadRequest",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"content\": \"Yeni İçerik\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7262/api/Article/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7262",
+					"path": [
+						"api",
+						"Article",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"uuid": "53a43295-5031-4dad-af7d-a90f94e02b52"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateArticleNotFound",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Yeni Başlık\",\r\n  \"content\": \"Yeni İçerik\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7262/api/Article/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7262",
+					"path": [
+						"api",
+						"Article",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5",
+							"uuid": "b6fcc52e-4fa2-49b5-af5a-1d8edd29d896"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DelArticleNoContent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7262/api/Article/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7262",
+					"path": [
+						"api",
+						"Article",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2",
+							"uuid": "2ff20477-c386-481c-ac60-9af3e7389999"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DelArticle Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7262/api/Article/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7262",
+					"path": [
+						"api",
+						"Article",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2",
+							"uuid": "057db248-a02f-49cd-82a0-4c8124673bae"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
