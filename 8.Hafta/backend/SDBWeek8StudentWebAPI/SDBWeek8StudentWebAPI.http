@@ -1,0 +1,6 @@
+@SDBWeek8StudentWebAPI_HostAddress = http://localhost:5117
+
+GET {{SDBWeek8StudentWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
